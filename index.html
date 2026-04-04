@@ -37,7 +37,7 @@ body {
 /* ===== HEADER ===== */
 header {
   background: linear-gradient(150deg, var(--navy-dark) 0%, var(--navy) 55%, #3a5ca8 100%);
-  padding: 26px 20px 22px;
+  padding: 26px 20px 28px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -67,52 +67,46 @@ header::after {
 .header-title span { color: var(--gold); }
 .header-sub {
   font-size: 0.73rem;
-  color: rgba(255,255,255,0.68);
-  margin-top: 6px;
+  color: rgba(255,255,255,0.62);
+  margin-top: 5px;
   letter-spacing: 0.04em;
   line-height: 1.6;
 }
-.header-langs {
-  display: flex;
-  justify-content: center;
-  gap: 6px;
-  margin-top: 10px;
-  flex-wrap: wrap;
-}
-.header-lang-tag {
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.22);
-  color: rgba(255,255,255,0.8);
-  border-radius: 20px;
-  padding: 3px 12px;
-  font-size: 0.72rem;
-}
 
-/* ===== LANG BAR ===== */
+/* ===== LANG BAR（ヘッダー内統合） ===== */
 .lang-bar {
   display: flex;
   justify-content: center;
   gap: 8px;
-  padding: 12px 16px 8px;
-  background: var(--navy-dark);
+  margin-top: 16px;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
 }
 .lang-btn {
   background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.2);
-  color: rgba(255,255,255,0.7);
-  border-radius: 20px;
-  padding: 5px 13px;
-  font-size: 0.76rem;
+  border: 1.5px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.8);
+  border-radius: 24px;
+  padding: 7px 18px;
+  font-size: 0.8rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.22s;
   font-family: 'Noto Sans JP', sans-serif;
+  letter-spacing: 0.02em;
+  backdrop-filter: blur(4px);
+}
+.lang-btn:hover {
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(255,255,255,0.45);
+  color: #fff;
 }
 .lang-btn.active {
   background: var(--gold);
-  border-color: var(--gold);
+  border-color: var(--gold-light);
   color: var(--navy-dark);
   font-weight: 700;
+  box-shadow: 0 2px 10px rgba(208,169,0,0.35);
 }
 
 /* ===== MAIN ===== */
@@ -534,21 +528,13 @@ footer a { color: var(--navy); text-decoration: none; }
   <span class="header-icon">🍽️</span>
   <div class="header-title">メニュー<span>みっけ</span></div>
   <div class="header-sub">写真1枚で多言語メニュー翻訳 ／ Multilingual Menu AI</div>
-  <div class="header-langs">
-    <span class="header-lang-tag">🇯🇵 日本語</span>
-    <span class="header-lang-tag">🇺🇸 English</span>
-    <span class="header-lang-tag">🇨🇳 中文</span>
-    <span class="header-lang-tag">🇰🇷 한국어</span>
+  <div class="lang-bar">
+    <button class="lang-btn active" onclick="setLang('ja')">🇯🇵 日本語</button>
+    <button class="lang-btn" onclick="setLang('en')">🇺🇸 English</button>
+    <button class="lang-btn" onclick="setLang('zh')">🇨🇳 中文</button>
+    <button class="lang-btn" onclick="setLang('ko')">🇰🇷 한국어</button>
   </div>
 </header>
-
-<!-- LANG BAR -->
-<div class="lang-bar">
-  <button class="lang-btn active" onclick="setLang('ja')">🇯🇵 日本語</button>
-  <button class="lang-btn" onclick="setLang('en')">🇺🇸 English</button>
-  <button class="lang-btn" onclick="setLang('zh')">🇨🇳 中文</button>
-  <button class="lang-btn" onclick="setLang('ko')">🇰🇷 한국어</button>
-</div>
 
 <div class="main">
 
