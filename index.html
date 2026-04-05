@@ -542,7 +542,7 @@ footer a { color: var(--navy); text-decoration: none; }
   <div class="paywall-wrap" id="paywallWrap">
     <div class="paywall-icon">🔒</div>
     <div class="paywall-title" id="pwTitle">無料翻訳3回を使い切りました</div>
-    <div class="paywall-desc" id="pwDesc">メニューみっけは月額1,980円のサービスです。\nご購入後にパスワードをお届けします。</div>
+    <div class="paywall-desc" id="pwDesc">メニューみっけは月額1,980円のサービスです。<br>ご購入後にパスワードをお届けします。</div>
     <a href="YOUR_STRIPE_URL" class="stripe-btn" id="pwStripeBtn">🔑 安全なStripeで購入する（月額1,980円）</a>
     <div class="pw-section">
       <div class="pw-label" id="pwLabel">すでにパスワードをお持ちの方</div>
@@ -625,7 +625,6 @@ footer a { color: var(--navy); text-decoration: none; }
     </button>
     <div class="free-badge">
       <span id="freeCount">あと3回無料</span>
-      <span id="freeBadgeText">で月額1,980円</span>
     </div>
   </div>
 
@@ -671,7 +670,7 @@ footer a { color: var(--navy); text-decoration: none; }
 // ============================================================
 //  設定
 // ============================================================
-const WORKER_URL  = 'https://yymmatsu.workers.dev/menu-mikke';
+const WORKER_URL  = 'https://menu-mikke.yymmatsu.workers.dev';
 const CORRECT_PW  = 'YOUR_PASSWORD_HERE';
 const STRIPE_URL  = 'YOUR_STRIPE_URL';
 const FREE_LIMIT  = 3;
@@ -690,14 +689,13 @@ const I18N = {
     s2Hint:'※ お店のジャンル・こだわりを入れると翻訳の精度が上がります。',
     s3Title:'📋 出力スタイルを選ぶ', s3Note:'用途に合わせて選択',
     analyzeBtnText:'🔍 このメニューを翻訳する',
-    freeBadgeText:'で月額1,980円',
     loadingText:'🍽️ メニューを読み取り中です…<br>少々お待ちください',
     resultHeaderText:'多言語メニュー翻訳結果',
     resultHeaderSub:'🇯🇵 🇺🇸 🇨🇳 🇰🇷 4言語対応',
     copyBtn:'📋 全文コピー', resetBtn:'🔄 別のメニューを翻訳',
     disclaimerText:'※ AI翻訳のため、ニュアンスが異なる場合があります。重要な箇所はネイティブによる確認を推奨します。',
     pwTitle:'無料翻訳3回を使い切りました',
-    pwDesc:'メニューみっけは月額1,980円のサービスです。\nご購入後にパスワードをお届けします。',
+    pwDesc:'メニューみっけは月額1,980円のサービスです。ご購入後にパスワードをお届けします。',
     pwStripeBtn:'🔑 安全なStripeで購入する（月額1,980円）',
     pwLabel:'すでにパスワードをお持ちの方', pwBtn:'入室',
     toastCopied:'コピーしました！', toastNoPhoto:'写真を選んでください📸',
@@ -716,14 +714,13 @@ const I18N = {
     s2Hint:'Adding your restaurant type or specialty improves translation quality.',
     s3Title:'📋 Select Output Style', s3Note:'Choose by purpose',
     analyzeBtnText:'🔍 Translate This Menu',
-    freeBadgeText:'then ¥1,980/month',
     loadingText:'🍽️ Reading your menu…<br>Please wait a moment',
     resultHeaderText:'Multilingual Menu Translation',
     resultHeaderSub:'🇯🇵 🇺🇸 🇨🇳 🇰🇷 4 languages',
     copyBtn:'📋 Copy All', resetBtn:'🔄 Translate Another Menu',
     disclaimerText:'* AI translation may have nuances that differ. For important items, verification by a native speaker is recommended.',
     pwTitle:'You have used all 3 free translations',
-    pwDesc:'Menu Mikke is ¥1,980/month.\nWe will send you a password after purchase.',
+    pwDesc:'Menu Mikke is ¥1,980/month. We will send you a password after purchase.',
     pwStripeBtn:'🔑 Subscribe via Stripe (¥1,980/month)',
     pwLabel:'Already have a password?', pwBtn:'Enter',
     toastCopied:'Copied!', toastNoPhoto:'Please select a photo 📸',
@@ -742,14 +739,13 @@ const I18N = {
     s2Hint:'填写餐厅类型和特色，可提升翻译精度。',
     s3Title:'📋 选择输出样式', s3Note:'根据用途选择',
     analyzeBtnText:'🔍 翻译此菜单',
-    freeBadgeText:'之后每月1,980日元',
     loadingText:'🍽️ 正在读取菜单…<br>请稍候',
     resultHeaderText:'多语言菜单翻译结果',
     resultHeaderSub:'🇯🇵 🇺🇸 🇨🇳 🇰🇷 四种语言',
     copyBtn:'📋 复制全文', resetBtn:'🔄 翻译其他菜单',
     disclaimerText:'※ AI翻译可能存在细微差异，重要内容建议由母语者确认。',
     pwTitle:'3次免费翻译已用完',
-    pwDesc:'メニューみっけ每月1,980日元。\n购买后将发送密码给您。',
+    pwDesc:'メニューみっけ每月1,980日元。购买后将发送密码给您。',
     pwStripeBtn:'🔑 通过Stripe订阅（每月1,980日元）',
     pwLabel:'已有密码？', pwBtn:'进入',
     toastCopied:'已复制！', toastNoPhoto:'请选择照片 📸',
@@ -768,14 +764,13 @@ const I18N = {
     s2Hint:'식당 유형이나 특색을 입력하면 번역 정확도가 높아집니다.',
     s3Title:'📋 출력 스타일 선택', s3Note:'용도에 맞게 선택',
     analyzeBtnText:'🔍 이 메뉴를 번역하기',
-    freeBadgeText:'이후 월 1,980엔',
     loadingText:'🍽️ 메뉴를 읽는 중입니다…<br>잠시만 기다려 주세요',
     resultHeaderText:'다국어 메뉴 번역 결과',
     resultHeaderSub:'🇯🇵 🇺🇸 🇨🇳 🇰🇷 4개 언어',
     copyBtn:'📋 전체 복사', resetBtn:'🔄 다른 메뉴 번역',
     disclaimerText:'※ AI 번역은 뉘앙스가 다를 수 있습니다. 중요한 내용은 원어민의 확인을 권장합니다.',
     pwTitle:'무료 번역 3회를 모두 사용했습니다',
-    pwDesc:'메뉴みっけ는 월 1,980엔 서비스입니다.\n구매 후 비밀번호를 보내드립니다.',
+    pwDesc:'메뉴みっけ는 월 1,980엔 서비스입니다. 구매 후 비밀번호를 보내드립니다.',
     pwStripeBtn:'🔑 Stripe로 구독（월 1,980엔）',
     pwLabel:'이미 비밀번호가 있으신가요？', pwBtn:'입장',
     toastCopied:'복사되었습니다！', toastNoPhoto:'사진을 선택하세요 📸',
