@@ -5,6 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>メニューみっけ｜写真で作る多言語メニュー翻訳AI</title>
 <meta name="description" content="メニューの写真を撮るだけで日本語・英語・中国語・韓国語に翻訳。インバウンド対応を即日スタート。">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+
+<!-- OGP -->
+<meta property="og:title" content="メニューみっけ｜写真1枚で多言語メニュー翻訳AI">
+<meta property="og:description" content="メニューの写真を撮るだけで日本語・英語・中国語・韓国語の4言語に翻訳。インバウンド対応を即日スタート。">
+<meta property="og:image" content="https://spc-jp.github.io/menu-mikke/ogp.png">
+<meta property="og:url" content="https://spc-jp.github.io/menu-mikke/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="メニューみっけ">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="メニューみっけ｜写真1枚で多言語メニュー翻訳AI">
+<meta name="twitter:description" content="メニューの写真を撮るだけで日本語・英語・中国語・韓国語の4言語に翻訳。インバウンド対応を即日スタート。">
+<meta name="twitter:image" content="https://spc-jp.github.io/menu-mikke/ogp.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <style>
@@ -594,8 +612,84 @@ footer a { color: var(--navy); text-decoration: none; }
   z-index: 999;
   pointer-events: none;
   white-space: nowrap;
+  max-width: 90vw;
+  white-space: normal;
+  text-align: center;
 }
 .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ===== スマホ横スクロール防止 ===== */
+html {
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== メディアクエリ（768px以下） ===== */
+@media (max-width: 768px) {
+  .main {
+    padding: 14px 12px 60px;
+  }
+  .step-card {
+    padding: 16px 14px;
+  }
+  .header-title {
+    font-size: 1.6rem;
+  }
+  .lang-btn {
+    padding: 6px 12px;
+    font-size: 0.74rem;
+  }
+  .output-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+  .out-btn {
+    padding: 10px 6px;
+  }
+  .out-btn .out-name { font-size: 0.76rem; }
+  .out-btn .out-desc { font-size: 0.62rem; }
+  .action-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .copy-btn, .reset-btn {
+    width: 100%;
+  }
+  .pw-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .pw-submit {
+    width: 100%;
+    padding: 13px;
+  }
+  .paywall-wrap {
+    padding: 28px 18px 24px;
+  }
+  .dish-name-langs {
+    flex-wrap: wrap;
+  }
+  .lang-tag {
+    font-size: 0.68rem;
+    padding: 2px 6px;
+  }
+  .analyze-btn {
+    font-size: 0.95rem;
+    padding: 15px 12px;
+  }
+  .stripe-btn {
+    font-size: 0.88rem;
+    padding: 14px 10px;
+  }
+}
 </style>
 </head>
 <body>
